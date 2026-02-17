@@ -8,6 +8,7 @@ fun main() {
   var d = Num(1000000000).multiply(10000000)
   println(d)
 
+
   var e = Num(5).devide(2)
   println(e)
 }
