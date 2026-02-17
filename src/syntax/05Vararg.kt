@@ -1,3 +1,5 @@
+package syntax
+
 fun main() {
   println(min(2 , 4, 6, 7, -1, 10, 50, 32, 12))
   println(average(2 , 4.5, 6f, 7L, -1, 10, 50, 32, 12))
