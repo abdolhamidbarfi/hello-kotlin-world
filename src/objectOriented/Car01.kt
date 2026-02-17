@@ -5,6 +5,15 @@ class Car01{
   //متغییری که داخل کلاس تعریف بشه بهش میگیم Field
   private var state : String = "OFF"
   var fuel: Int = 0
+    get() = field * 2
+    set(value) {
+      if (value < 0) {
+        println("fuel must be positive integer")
+        return
+      }
+      field = value
+    }
+
   var name: String = "No Name"
   //متغیری که با val تعریف بشه فقط قابل خوندن هست
   val fuelCapacity: Int = 40
