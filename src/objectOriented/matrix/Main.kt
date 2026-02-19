@@ -16,7 +16,7 @@ val a = Mat(2 , 3 ,
 
   var f = d - e
   var g = d + e
-  var h = Mat(2 , 3 , 1, 2 , 3, 4 ,5 ,6 ) * Mat(3, 2, 1, 2, 3, 4, 5, 6)
+  var h = Mat(2 , 3 , 1, 2 , 3, 4 ,5 ,6 ) * Mat(3, 2, 1.4, 2.5, 3.6, 4.4, 5.5, 6.6)
   var i = d x e
 
   println(f)
