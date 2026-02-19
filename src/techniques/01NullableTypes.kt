@@ -1,4 +1,4 @@
-package techniques.nullableTypes
+package techniques
 
 fun main() {
   var a: String? = "Hello"
