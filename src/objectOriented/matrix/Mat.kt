@@ -1,7 +1,7 @@
 package objectOriented.matrix
 
 class Mat (rows: Int, cols: Int) {
-   var data = IntArray(rows * cols)
+   private var data = IntArray(rows * cols)
 
   var rows = rows
   var cols = cols
@@ -33,6 +33,52 @@ class Mat (rows: Int, cols: Int) {
      data[(row -1 ) * cols + (col - 1)] = value
   }
 
+  operator fun plus (other : Mat ) : Mat? {
+    if (rows != other.rows || cols != other.cols) {
+      println("dimentions mismatch")
+      return null
+    }
+    val result = Mat(rows, cols)
+    for (i in 1..rows) {
+      for (j in 1..cols) {
+        result[i , j] = get(i , j) +  other[i , j]
+      }
+    }
+    return result
+  }
+
+  operator fun minus(other: Mat) : Mat? {
+    if (rows != other.rows || cols != other.cols) {
+      println("dimentions mismatch")
+      return null
+    }
+    val result = Mat(rows, cols)
+    for(i in 1..rows) {
+      for (j in 1..cols) {
+        result[i , j] = get(i , j) - other[i , j]
+      }
+    }
+    return result
+  }
+
+  operator fun times(other: Mat) : Mat? {
+    if (cols != other.rows) {
+      println("dimentions mismatch")
+      return null
+    }
+    val result = Mat(rows, other.cols)
+
+    for (i in 1..rows) {
+      for (j in 1..other.cols) {
+        var sum = 0
+        for (k in 1..cols) {
+          sum = sum + get(i, k) * other[i, k]
+        }
+        result[i , j] = sum
+      }
+    }
+    return result
+  }
   override fun toString(): String {
     var output = ""
     for (i in 0 until rows) {
@@ -48,5 +94,21 @@ class Mat (rows: Int, cols: Int) {
       output = output + "|\n"
     }
     return output
+  }
+
+
+
+  infix fun x(other: Mat): Mat? {
+    if (rows != other.rows || cols != other.cols) {
+      println("dimentions mismatch")
+      return null
+    }
+    val result = Mat(rows, cols)
+    for (i in 1..rows) {
+      for (j in 1..cols) {
+        result[i , j] = get(i , j) *  other[i , j]
+      }
+    }
+    return result
   }
 }
