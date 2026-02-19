@@ -28,13 +28,36 @@ fun main(args: Array<String>) {
   val pride2 = Pride()
   val pride3 = Pride()
   println("Pride.count  ${Pride.getCount()}")
-  
+
   car1.sample()
   pride1.sample()
   pride2.sample()
 
+  Car3.staticSample()
+//  Pride.staticSample() --> we dont access
+
+  var p1 = Person(name = "Mike", age = 10, isMale = true , lastName = "Zanjani")
+
+  var p2 = p1.copy(
+    name = "Samuel",
+    age = 20,
+  )
+
+  println(p1)
+  println(p2)
+
+  p1.sayHello()
+  p2.sayHello()
+
+  p1.sayHello2()
+  p2.sayHello2()
 }
 
 fun Car3.sample() {
   println("sample")
 }
+
+fun Car3.Companion.staticSample() {
+  println("static sample from companion")
+}
+
