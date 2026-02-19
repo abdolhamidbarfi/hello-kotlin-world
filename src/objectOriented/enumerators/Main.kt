@@ -9,6 +9,7 @@ fun main() {
     Status.FAILED -> println("Failed")
     Status.SUCCEEDED -> println("Succeeded")
     Status.QUEUE -> println("Queued")
+    else -> println("Failed")
   }
 
   if ( s1 === Status.FAILED) {
